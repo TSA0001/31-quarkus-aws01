@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: rainfall-postgres
+    environment:
+      POSTGRES_DB: rainfall_db
+      POSTGRES_USER: rainfall
+      POSTGRES_PASSWORD: rainfall123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - rainfall-network
+
+volumes:
+  postgres-data:
+
+networks:
+  rainfall-network:
+    driver: bridge

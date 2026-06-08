@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+
+.DS_Store
+
+target/
+*.class
+
+*.log
+app.pid
+
+*.zip
+*.tar.gz
+
+response.json
+*.bak
